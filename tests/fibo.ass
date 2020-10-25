@@ -1,0 +1,57 @@
+addi $0,8,$28
+jump 44
+load 0($28),$8	//L1
+addi $0,1,$9
+sub $28,$9,$28
+store $8,0($0)
+store $0,1($0)
+store $0,2($0)
+store $0,3($0)
+store $0,4($0)
+addi $0,0,$9
+store $9,1($0)
+load 1($0),$8
+load 0($0),$9
+bgt $8,$9,37
+load 1($0),$8	//L3
+addi $0,1,$9
+bgt $8,$9,22
+load 1($0),$8
+store $8,2($0)
+jump 30
+load 3($0),$8	//L4
+load 4($0),$9
+add $8,$9,$10
+store $10,2($0)
+load 4($0),$8
+store $8,3($0)
+load 2($0),$8
+store $8,4($0)
+load 1($0),$8	//L5
+addi $0,1,$9
+add $8,$9,$10
+store $10,1($0)
+load 1($0),$8
+load 0($0),$9
+ble $8,$9,16
+load 2($0),$8	//L2
+addi $8,0,$5
+jump 40
+load 0($28),$31	//L0
+addi $0,1,$8
+sub $28,$8,$28
+jr $31
+store $0,5($0)	//main
+in $5
+addi $5,0,$8
+store $8,5($0)
+addi $0,57,$8
+store $8,0($28)
+addi $28,1,$28
+load 5($0),$9
+store $9,0($28)
+addi $28,1,$28
+addi $0,1,$10
+sub $28,$10,$28
+jal 3
+out $11
