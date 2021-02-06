@@ -1,0 +1,23 @@
+addi $0,6,$28
+jump 3
+store $0,0($0)	//main
+store $0,1($0)
+store $0,2($0)
+store $0,3($0)
+addi $0,5,$8
+store $8,0($0)
+in $5
+addi $5,0,$8
+store $8,1($0)
+addi $0,10,$8
+store $8,2($0)
+load 0($0),$8
+load 1($0),$9
+mult $8,$9,$10
+store $10,3($0)
+load 3($0),$8
+load 2($0),$9
+add $8,$9,$10
+store $10,3($0)
+load 3($0),$8
+out $8

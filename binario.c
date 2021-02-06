@@ -246,7 +246,7 @@ void jumpBin(char *read, int index){
 void jalBin(char *read, int index){
 
     index = getImd(read, index);
-    fprintf(code2, "instruc[%d] = {6'd26, 26'd%d}; \t\t\t// jal\n", linhaA, atoi(regB));
+    fprintf(code2, "instruc[%d] = {6'd27, 26'd%d}; \t\t\t// jal\n", linhaA, atoi(regB));
 }
 
 

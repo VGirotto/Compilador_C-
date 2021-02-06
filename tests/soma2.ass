@@ -1,0 +1,17 @@
+addi $0,5,$28
+jump 3
+store $0,0($0)	//main
+store $0,1($0)
+store $0,2($0)
+in $5
+addi $5,0,$8
+store $8,0($0)
+in $5
+addi $5,0,$8
+store $8,1($0)
+load 0($0),$8
+load 1($0),$9
+add $8,$9,$10
+store $10,2($0)
+load 2($0),$8
+out $8

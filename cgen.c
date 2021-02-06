@@ -356,9 +356,11 @@ static int genStmt( NoArvore * t)
                fprintf(code, "\n");
             } else {
 
-               if (p1->tipo.dcl == FUNCAO)
+               //se o filho for tbm uma chamada, antes armazena o valor de $a1 num temp
+               if (p1->tipo.dcl == CALL)
                {
-                  fprintf(code, "(store,$a1,0,$t%d)", aux1);
+                  fprintf(code, "(addi,$a1,0,$t%d)", aux1);
+                  //fprintf(code, "(store,$a1,0,$t%d)", aux1);
                   if (TraceCode) fprintf(code, "\tStore retorno no temporario para output");
                   fprintf(code, "\n");
                }
